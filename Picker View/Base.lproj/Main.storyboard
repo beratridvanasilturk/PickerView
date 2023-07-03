@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Picker_View" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cKT-Bo-Q4V">
+                                <rect key="frame" x="36.666666666666657" y="318" width="320" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdL-GW-KXJ">
+                                <rect key="frame" x="64" y="233" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSc-4Z-QB6">
+                                <rect key="frame" x="122" y="233" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zMU-vM-tmr">
+                                <rect key="frame" x="171" y="233" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQS-fI-pJX">
+                                <rect key="frame" x="236" y="233" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cKT-Bo-Q4V" firstAttribute="top" secondItem="zMU-vM-tmr" secondAttribute="bottom" constant="64" id="3tI-q0-Y6N"/>
+                            <constraint firstItem="cKT-Bo-Q4V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DAX-3I-sMe"/>
+                            <constraint firstItem="UdL-GW-KXJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="PF5-Uq-6h7"/>
+                            <constraint firstItem="hSc-4Z-QB6" firstAttribute="leading" secondItem="UdL-GW-KXJ" secondAttribute="trailing" constant="8" id="Ppm-Xi-c0w"/>
+                            <constraint firstItem="cKT-Bo-Q4V" firstAttribute="top" secondItem="UdL-GW-KXJ" secondAttribute="bottom" constant="64" id="XFG-zz-M7f"/>
+                            <constraint firstItem="zMU-vM-tmr" firstAttribute="leading" secondItem="hSc-4Z-QB6" secondAttribute="trailing" constant="8" id="Zn1-4a-K4V"/>
+                            <constraint firstItem="DQS-fI-pJX" firstAttribute="leading" secondItem="zMU-vM-tmr" secondAttribute="trailing" constant="8" id="bcl-nm-xpp"/>
+                            <constraint firstItem="cKT-Bo-Q4V" firstAttribute="top" secondItem="DQS-fI-pJX" secondAttribute="bottom" constant="64" id="mAQ-ma-our"/>
+                            <constraint firstItem="cKT-Bo-Q4V" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mNZ-gI-5Io"/>
+                            <constraint firstItem="cKT-Bo-Q4V" firstAttribute="top" secondItem="hSc-4Z-QB6" secondAttribute="bottom" constant="64" id="pms-qY-TnF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="HourLbl" destination="hSc-4Z-QB6" id="Vcn-SI-lnv"/>
+                        <outlet property="minuteLbl" destination="zMU-vM-tmr" id="bQg-LW-TLc"/>
+                        <outlet property="pickerView" destination="cKT-Bo-Q4V" id="Khs-Wf-89I"/>
+                        <outlet property="secondLbl" destination="DQS-fI-pJX" id="XEe-PN-SeK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
