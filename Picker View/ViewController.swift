@@ -11,7 +11,6 @@ class ViewController: UIViewController {
     
     //MARK: Variables
     @IBOutlet var pickerView: UIPickerView!
-    
     @IBOutlet var HourLbl: UILabel!
     @IBOutlet var minuteLbl: UILabel!
     @IBOutlet var secondLbl: UILabel!
@@ -25,8 +24,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setInitViews()
     }
-
+    
     private func setInitViews() {
+        
+        // Temsiliyeti ve veri yonetimini bu fonksiyona vermemizin sebebi arraylari kendimize gore olusturabilmemizi saglamaktir.z
         pickerView.delegate = self
         pickerView.dataSource = self
         
@@ -42,10 +43,8 @@ class ViewController: UIViewController {
     }
 }
 
-
 extension ViewController: UIPickerViewDataSource{
     
-   
 }
 
 extension ViewController: UIPickerViewDelegate  {
@@ -54,11 +53,11 @@ extension ViewController: UIPickerViewDelegate  {
         var baslik = ""
         
         switch component {
+            
         case 0: baslik = hourArr[row]
         case 1: baslik = minuteArr[row]
         case 2: baslik = secondArr[row]
-        default:
-            baslik = ""
+        default: baslik = ""
         }
         return baslik
     }
@@ -66,19 +65,22 @@ extension ViewController: UIPickerViewDelegate  {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         switch component {
+            
         case 0: HourLbl.text = hourArr[row]
         case 1: minuteLbl.text = minuteArr[row]
         case 2: secondLbl.text = secondArr[row]
-        default:
-            HourLbl.text = ""
+        default: HourLbl.text = ""
         }
     }
     
+    // Component sayisini belirler. Her bir picker bir componenttir.
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
     
+    // Her bir component'teki satir sayisi
     func pickerView(_ pickerView: UIPickerView,  numberOfRowsInComponent component: Int) -> Int {
+        
         var numberOfRows = 0
         
         switch component {
@@ -90,7 +92,6 @@ extension ViewController: UIPickerViewDelegate  {
         }
         return numberOfRows
     }
-    
 }
 
- 
+
