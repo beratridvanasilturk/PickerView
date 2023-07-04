@@ -31,19 +31,48 @@ class ViewController: UIViewController {
         pickerView.dataSource = self
         
         for i in 0..<24 {
-            hourArr.insert("Eleman \(i+1)", at: i)
+            hourArr.insert("\(i+1)", at: i)
         }
         minuteArr = { for i in 0...60 {
             minuteArr.insert("\(i)", at: i)
         }
+            return minuteArr
         }()
-        
         secondArr = minuteArr
     }
 }
 
 
 extension ViewController: UIPickerViewDataSource{
+    
+   
+}
+
+extension ViewController: UIPickerViewDelegate  {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        var baslik = ""
+        
+        switch component {
+        case 0: baslik = hourArr[row]
+        case 1: baslik = minuteArr[row]
+        case 2: baslik = secondArr[row]
+        default:
+            baslik = ""
+        }
+        return baslik
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        switch component {
+        case 0: HourLbl.text = hourArr[row]
+        case 1: minuteLbl.text = minuteArr[row]
+        case 2: secondLbl.text = secondArr[row]
+        default:
+            HourLbl.text = ""
+        }
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
@@ -60,21 +89,6 @@ extension ViewController: UIPickerViewDataSource{
             numberOfRows = 0
         }
         return numberOfRows
-    }
-}
-
-extension ViewController: UIPickerViewDelegate  {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        switch component {
-        case 0: hourArr.text = hourArr[row]
-        case 1: numberOfRows = 60
-        case 2: numberOfRows = 60
-        default:
-            numberOfRows = 0
-        }
-        return numberOfRows
-        
     }
     
 }
